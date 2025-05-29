@@ -1,0 +1,28 @@
+// _variables.scss
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$light-colors: (
+  bg:        #FCFCFC,
+  text:      #171717,
+  primary:   #393E46,
+  secondary: #EDEDED,
+  accent:    #00AAB3,
+  shadow:    #d1cdcd
+);
+
+$dark-colors: (
+  bg:        #171717,
+  text:      #FCFCFC,
+  primary:   #EDEDED,
+  secondary: #393E46,
+  accent:    #4DF6FF,
+  shadow:    #070808
+);

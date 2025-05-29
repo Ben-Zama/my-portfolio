@@ -1,0 +1,53 @@
+/* Imports */
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+@import './variables';
+@import './mixins';
+
+@import './global';
+@import './layout';
+
+
+/* Font imports */
+
+@font-face {
+    font-family: logo-font;
+    src: url(/assets/fonts/valorax/Valorax-lg25V.otf);
+}
+
+@font-face {
+    font-family: signature-font;
+    src: url(/assets/fonts/bastliga-one/Bastliga\ One.ttf);
+}
+
+@font-face {
+    font-family: header-font;
+    src: url(/assets/fonts/Cabin/Cabin-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+    font-family: sub-header-font;
+    src: url(/assets/fonts/Play/Play-Regular.ttf);
+}
+
+@font-face {
+    font-family: body-font;
+    src: url(/assets/fonts/Ubuntu/Ubuntu-Light.ttf);
+}
+
+/* Theme colors */
+
+:root {
+  @include generate-theme($light-colors);
+}
+
+[data-theme='dark'] {
+  @include generate-theme($dark-colors);
+}
+
+body {
+  background: var(--bg-color);
+  color:      var(--text-color);
+  transition: background .3s, color .3s;
+}

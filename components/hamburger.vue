@@ -15,7 +15,9 @@
       </svg>
     </label>
 
-    <mobileMenu :class="{ 'visible': modelValue, 'hidden': !modelValue }" />
+    <div :class="{ 'visible': modelValue, 'hidden': !modelValue }" >
+      <mobileMenu />
+    </div>
   </div>
 </template>
 

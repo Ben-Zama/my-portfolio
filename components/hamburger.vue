@@ -15,15 +15,11 @@
       </svg>
     </label>
 
-    <div :class="{ 'visible': modelValue, 'hidden': !modelValue }" >
-      <mobileMenu />
-    </div>
   </div>
 </template>
 
 <script setup>
 import { defineProps, defineEmits } from 'vue';
-import mobileMenu from './mobileMenu.vue'
 
 const props = defineProps({
   modelValue: {
@@ -37,7 +33,7 @@ const emit = defineEmits(['update:modelValue']);
 
 <style lang="scss" >
 
-@import '/assets/styles/main.scss';
+@import '@/assets/styles/main.scss';
 
 .hamburger-container {
   position: relative;

@@ -1,32 +1,63 @@
 <template>
-  <div class="menu">
-    <img src="/assets/images/headshot.jpg" alt="" />
-    <nav>
-      <ul>
-        <h2>Links</h2>
 
-        <li><nuxt-link to="/">Home</nuxt-link></li>
-        <li><nuxt-link to="/about">About</nuxt-link></li>
-        <li><nuxt-link to="/services">Services</nuxt-link></li>
-        <li><nuxt-link to="/projects">Projects</nuxt-link></li>
-        <li><nuxt-link to="/profiles">Profiles</nuxt-link></li>
-        <li><nuxt-link to="/contact">Contact</nuxt-link></li>
-      </ul>
-    </nav>
-    <div class="socialLinks">
-      <a
-        v-for="item in socialLinks"
-        :key="item.id"
-        :href="item.link"
-        target="_blank"
-      >
-        <i :class="item.icon"></i>
-      </a>
-    </div>
-    <hr />
-    <div class="copyright">
-      &copy; <span>{{ new Date().getFullYear() }}</span> All rights reserved.<br />
-      Developed by <a href="">Benzama</a>
+  <div class="mobileMenuWrapper">
+
+    <div class="menu">
+
+      <!-- Headshot -->
+
+      <img src="/assets/images/headshot.jpg" alt="" />
+
+      <!-- Name Section -->
+
+      <div class="intro">
+        <p class="name">Benzama Musa</p>
+        <p class="role">Frontend Web Developer</p>
+      </div>
+
+      <!-- Navigation Links -->
+
+      <nav>
+        <ul>
+          <h2>Links</h2>
+
+          <li @click="$emit('close')"><nuxt-link to="/">Home</nuxt-link></li>
+          <li @click="$emit('close')">
+            <nuxt-link to="/about">About</nuxt-link>
+          </li>
+          <li @click="$emit('close')">
+            <nuxt-link to="/services">Services</nuxt-link>
+          </li>
+          <li @click="$emit('close')">
+            <nuxt-link to="/projects">Projects</nuxt-link>
+          </li>
+          <li @click="$emit('close')">
+            <nuxt-link to="/profiles">Profiles</nuxt-link>
+          </li>
+          <li @click="$emit('close')">
+            <nuxt-link to="/contact">Contact</nuxt-link>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Social Links -->
+
+      <div class="socialLinks">
+        <a
+          v-for="item in socialLinks"
+          :key="item.id"
+          :href="item.link"
+          target="_blank"
+        >
+          <i :class="item.icon"></i>
+        </a>
+      </div>
+      <hr />
+      <div class="copyright">
+        &copy; <span>{{ new Date().getFullYear() }}</span> All rights
+        reserved.<br />
+        Developed by <a href="">Benzama</a>
+      </div>
     </div>
   </div>
 </template>
@@ -41,19 +72,16 @@ const socialLinks = [
 </script>
 
 <style lang="scss" scoped>
-@import "/assets/styles/main.scss";
+@import "@/assets/styles/main.scss";
 
 .menu {
-  position: fixed;
-  top: 100px;
-  left: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 25px;
   background-color: var(--secondary-color);
   box-shadow: 2px 2px 8px var(--shadow-color);
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 50px 25px;
   z-index: 2;
 
@@ -62,6 +90,20 @@ const socialLinks = [
     height: 125px;
     border-radius: 50%;
     object-fit: cover;
+  }
+
+  .intro {
+    text-align: center;
+    color: var(--primary-color);
+    .name {
+      font-size: 20px;
+      font-family: sub-header-font;
+    }
+    .role {
+      font-size: 12.5px;
+      font-family: body-font;
+      opacity: 0.75;
+    }
   }
 
   nav {

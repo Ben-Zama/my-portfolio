@@ -1,14 +1,19 @@
 /* Layout */
 
-.layout {
+.mobileMenuWrapper {
+  position: absolute;
+  top: 100px;
+  left: 15px;
+  background-color: var(--background);
+  transform: translateY(-125%);
+  transition: transform 0.5s ease;
+  z-index: 20;
+}
+.mobileMenuWrapper.active {
+  transform: translateY(0);
+}
 
-    .backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;        
-    }
+.layout {
 
     header {
         position: sticky;
@@ -20,6 +25,8 @@
         justify-content: space-between;
         padding: 0 20px;
         box-shadow: 2px 2px 8px var(--shadow-color);
+        background-color: var(--bg-color);
+        z-index: 50;
 
         .logo {
             font-family: logo-font;

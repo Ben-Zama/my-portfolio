@@ -11,6 +11,12 @@ a {
   color: inherit;
 }
 
+button, input {
+  background: none;
+  border: none;
+  outline: none;
+}
+
 /* Router link styles */
 
 .layout,

@@ -1,33 +1,42 @@
 // Home page
 
 .home {
-    padding: 50px 25px;
-    .gridContainer {
-        display: grid;
-        grid-template-columns: repeat(1fr, 1);
-        grid-auto-rows: 250px;
-        gap: 25px;
+  padding: 50px 25px;
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(1fr, 1);
+    grid-auto-rows: 250px;
+    gap: 25px;
+
+    .grid {
+      .wrapper {
+        width: 100%;
+        height: 100%;
+      }
     }
+  }
 }
 
 @include respond(md) {
-    .home {
-        .gridContainer {
-            grid-template-columns: repeat(2, 1fr);
-            grid-auto-rows: 300px;
-        }
+  .home {
+    .gridContainer {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 300px;
     }
+  }
 }
 
 @include respond(lg) {
-    .home {
-        padding: 50px 100px;
-        .gridContainer {
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 350px;
-            .grid1, .grid5, .grid7, .grid8 {
-                grid-column: span 2;
-            }
-        }
+  .home {
+    padding: 50px 10%;
+    .gridContainer {
+      grid-template-columns: repeat(4, 1fr);
+      .grid1,
+      .grid5,
+      .grid7,
+      .grid8 {
+        grid-column: span 2;
+      }
     }
+  }
 }

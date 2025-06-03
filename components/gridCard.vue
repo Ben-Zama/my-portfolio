@@ -34,10 +34,12 @@ const props = defineProps({
     border-radius: 15px;
     box-shadow: 2px 2px 8px var(--shadow-color), -2px -2px 8px var(--shadow-color);
     padding: 10px;
-    transition: border 0.1s;
+    transition: border 0.1s, transform 0.3s;
+    border: 1px solid transparent;
     
     &:hover {
         border: .1px solid var(--accent-color);
+        transform: scale(1.025);
     }
 
     .card {

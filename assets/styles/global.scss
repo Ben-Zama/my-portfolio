@@ -52,7 +52,7 @@ button, input {
 
 .slide-left-enter-active,
 .slide-left-leave-active {
-  transition: transform 0.3s ease;
+  transition: transform .5s ease;
 }
 .slide-left-enter-from {
   transform: translateX(100%);

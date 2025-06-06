@@ -36,7 +36,7 @@
 
     <!-- Footer -->
 
-    <footer>
+    <footer data-aos="fade-up">
       <div class="logo">BENZAMA</div>
 
       <div class="icons">

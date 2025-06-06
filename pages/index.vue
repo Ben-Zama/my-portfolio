@@ -4,7 +4,7 @@
       <div class="gridContainer">
         <!-- Grid 1 -->
 
-        <div class="grid grid1">
+        <div v class="grid grid1" data-aos="fade-up">
           <gridCard :showButton="false">
             <div class="wrapper">
               <div class="image">
@@ -26,7 +26,7 @@
 
         <!-- Grid 2 -->
 
-        <nuxtLink to="/about" class="grid grid2">
+        <nuxtLink to="/about" v class="grid grid2" data-aos="fade-up">
           <gridCard>
             <div class="wrapper">
               <div class="signature">
@@ -42,7 +42,7 @@
 
         <!-- Grid 3 -->
 
-        <nuxtLink to="/projects" class="grid grid3">
+        <nuxtLink to="/projects" v class="grid grid3" data-aos="fade-up">
           <gridCard>
             <div class="wrapper">
               <div class="image">
@@ -58,7 +58,7 @@
 
         <!-- Grid 4 -->
 
-        <div class="grid grid4">
+        <div v class="grid grid4" data-aos="fade-up">
           <gridCard :showButton="false">
             <div class="wrapper">
               <div class="slider">
@@ -71,12 +71,16 @@
                   :observer="true"
                   :observe-parents="true"
                   class="mySwiper"
+                  :breakpoints="{
+                    1024: {
+                      slidesPerView: 3,
+                      slidesPerGroup: 3,
+                      effect: 'slide',
+                    },
+                  }"
                 >
                   <SwiperSlide v-for="skill in skills" :key="skill.id">
-                    <img
-                      :src="skill.icon"
-                      class="skill-icon"
-                    />
+                    <img :src="skill.icon" class="skill-icon" />
                   </SwiperSlide>
                 </Swiper>
               </div>
@@ -86,26 +90,76 @@
 
         <!-- Grid 5 -->
 
-        <nuxtLink to="/services" class="grid grid5">
-          <gridCard></gridCard>
+        <nuxtLink to="/services" v class="grid grid5" data-aos="fade-up">
+          <gridCard>
+            <div class="wrapper">
+              <div class="icons">
+                <i class="bi bi-phone"></i>
+                <i class="bi bi-globe2"></i>
+                <i class="bi bi-laptop"></i>
+              </div>
+              <div class="text">
+                <p>What I can do</p>
+                <h2>Services</h2>
+              </div>
+            </div>
+          </gridCard>
         </nuxtLink>
 
         <!-- Grid 6 -->
 
-        <nuxtLink to="/profiles" class="grid grid6">
-          <gridCard></gridCard>
+        <nuxtLink to="/profiles" v class="grid grid6" data-aos="fade-up">
+          <gridCard>
+            <div class="wrapper">
+              <div class="icons">
+                <div>
+                  <i class="bi bi-linkedin"></i>
+                </div>
+                <div>
+                  <i class="bi bi-github"></i>
+                </div>
+              </div>
+              <div class="text">
+                <p>Connect with me</p>
+                <h2>Profiles</h2>
+              </div>
+            </div>
+          </gridCard>
         </nuxtLink>
 
         <!-- Grid 7 -->
 
-        <div class="grid grid7">
-          <gridCard :showButton="false"></gridCard>
+        <div v class="grid grid7" data-aos="fade-up">
+          <gridCard :showButton="false">
+            <div class="wrapper">
+              <div>
+                <h2>02</h2>
+                <p>Years Experience</p>
+              </div>
+              <div>
+                <h2>25+</h2>
+                <p>Completed Projects</p>
+              </div>
+            </div>
+          </gridCard>
         </div>
 
         <!-- Grid 8 -->
 
-        <nuxtLink to="/contact" class="grid grid8">
-          <gridCard></gridCard>
+        <nuxtLink to="/contact" v class="grid grid8" data-aos="fade-up">
+          <gridCard>
+            <div class="wrapper">
+              <div class="icon">
+                <i class="bi bi-stars"></i>
+              </div>
+              <div class="text">
+                <p>
+                  Let's <br />
+                  work <span>together</span>
+                </p>
+              </div>
+            </div>
+          </gridCard>
         </nuxtLink>
       </div>
     </div>
@@ -117,8 +171,8 @@ import gridCard from "@/components/gridCard.vue";
 
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay } from "swiper/modules";
-import 'swiper/css';
-import 'swiper/css/effect-fade';
+import "swiper/css";
+import "swiper/css/effect-fade";
 
 import HTML5 from "@/assets/icons/html.png";
 import CSS3 from "@/assets/icons/css.png";
@@ -139,7 +193,7 @@ const skills = [
   { id: 6, name: "Tailwind CSS", icon: TailwindCSS },
   { id: 7, name: "Bootstrap", icon: Bootstrap },
   { id: 8, name: "SASS", icon: SASS },
-  { id: 9, name: "Firebase", icon: Firebase }
+  { id: 9, name: "Firebase", icon: Firebase },
 ];
 </script>
 
@@ -147,6 +201,22 @@ const skills = [
 
 <style lang="scss">
 @import "@/assets/styles/main.scss";
+
+/* Base text */
+
+.text {
+  text-align: start;
+  color: var(--primary-color);
+  p {
+    font-family: sub-header-font;
+    font-size: 12.5px;
+    opacity: 0.75;
+  }
+  h2 {
+    font-family: header-font;
+    font-size: 20px;
+  }
+}
 
 /* Grid 1 */
 
@@ -193,20 +263,29 @@ const skills = [
   }
 }
 
-@include respond(lg) {
+@include respond(md) {
   .grid1 {
     .wrapper {
       flex-direction: row;
-      gap: 25px;
+      gap: 50px;
       .image {
         height: 200px;
         width: 175px;
         img {
-          border-radius: 50px 0 50px 0;
+          border-radius: 25px 0 25px 0;
         }
       }
       .text {
-        width: 50%;
+        width: 35%;
+        > div {
+          h2 {
+            margin-top: 1px;
+            font-size: 25px;
+          }
+        }
+        > p {
+          font-size: 15px;
+        }
       }
     }
   }
@@ -221,23 +300,11 @@ const skills = [
     justify-content: space-between;
     gap: 10px;
     padding: 10px 0;
-  }
-  .signature {
-    margin-top: 25px;
-    font-family: signature-font;
-    font-size: 75px;
-    color: var(--accent-color);
-  }
-  .text {
-    text-align: start;
-    p {
-      font-family: sub-header-font;
-      font-size: 12.5px;
-      opacity: 0.75;
-    }
-    h2 {
-      font-family: header-font;
-      font-size: 20px;
+    .signature {
+      margin-top: 25px;
+      font-family: signature-font;
+      font-size: 75px;
+      color: var(--accent-color);
     }
   }
 }
@@ -270,18 +337,6 @@ const skills = [
         object-fit: contain;
       }
     }
-    .text {
-      text-align: start;
-      p {
-        font-family: sub-header-font;
-        font-size: 12.5px;
-        opacity: 0.75;
-      }
-      h2 {
-        font-family: header-font;
-        font-size: 20px;
-      }
-    }
   }
 }
 
@@ -302,6 +357,9 @@ const skills = [
     display: flex;
     justify-content: center;
     align-items: center;
+    ::before {
+      background-color: transparent;
+    }
     .slider {
       width: 100%;
       height: 100%;
@@ -313,7 +371,7 @@ const skills = [
         width: 100%;
         height: 100%;
         background-color: transparent;
-        
+
         .swiper-slide {
           display: flex;
           align-items: center;
@@ -323,6 +381,180 @@ const skills = [
             height: 150px;
             object-fit: contain;
           }
+        }
+      }
+    }
+  }
+}
+
+@include respond(lg) {
+  .grid4 {
+    .wrapper {
+      .slider {
+        .mySwiper {
+          .swiper-slide {
+            .skill-icon {
+              width: 100px;
+              height: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Grid 5 - Services */
+
+.grid5 {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+    gap: 10px;
+    .icons {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      i {
+        font-size: 25px;
+        color: var(--primary-color);
+        opacity: 0.75;
+      }
+    }
+  }
+}
+
+/* Grid 6 - Profiles */
+
+.grid6 {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+    gap: 10px;
+    .icons {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      div {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: var(--primary-color);
+        box-shadow: 2px 2px 8px var(--shadow-color),
+          -2px -2px 8px var(--shadow-color);
+      }
+    }
+  }
+}
+
+/* Grid 7 - Stats */
+
+.grid7 {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 10px 0;
+    div {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      border-radius: 25px 0 25px 0;
+      box-shadow: 2px 2px 8px var(--shadow-color),
+        -2px -2px 8px var(--shadow-color);
+      h2 {
+        font-family: header-font;
+      }
+      p {
+        font-family: sub-header-font;
+        opacity: 0.75;
+      }
+    }
+  }
+}
+
+@include respond(md) {
+  .grid7 {
+    .wrapper {
+      padding: 20px;
+    }
+  }
+}
+
+@include respond(lg) {
+  .grid7 {
+    .wrapper {
+      flex-direction: row;
+      padding: 20px;
+      gap: 35px;
+      div {
+        height: max-content;
+        width: max-content;
+        padding: 35px;
+      }
+    }
+  }
+}
+
+/* Grid 8 - Contact */
+
+.grid8 {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+    .icon {
+      position: relative;
+      font-size: 50px;
+      color: var(--primary-color);
+      opacity: 0.5;
+      i {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    .text {
+      p {
+        font-size: 25px;
+        font-family: header-font;
+        opacity: 1;
+        font-weight: bold;
+        span {
+          color: var(--accent-color);
+        }
+      }
+    }
+  }
+}
+
+@include respond(md) {
+  .grid8 {
+    .wrapper {
+      .icon {
+        font-size: 60px;
+      }
+      .text {
+        p {
+          font-size: 30px;
         }
       }
     }

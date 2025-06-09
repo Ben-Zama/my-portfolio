@@ -32,9 +32,6 @@
             <nuxt-link to="/projects">Projects</nuxt-link>
           </li>
           <li @click="$emit('close')">
-            <nuxt-link to="/profiles">Profiles</nuxt-link>
-          </li>
-          <li @click="$emit('close')">
             <nuxt-link to="/contact">Contact</nuxt-link>
           </li>
         </ul>

@@ -24,7 +24,7 @@
           </gridCard>
         </div>
 
-        <!-- Grid 2 -->
+        <!-- Grid 2 - About -->
 
         <nuxtLink to="/about" v class="grid grid2" data-aos="fade-up">
           <gridCard>
@@ -40,7 +40,7 @@
           </gridCard>
         </nuxtLink>
 
-        <!-- Grid 3 -->
+        <!-- Grid 3 - Projects -->
 
         <nuxtLink to="/projects" v class="grid grid3" data-aos="fade-up">
           <gridCard>
@@ -56,7 +56,7 @@
           </gridCard>
         </nuxtLink>
 
-        <!-- Grid 4 -->
+        <!-- Grid 4 - Skills -->
 
         <div v class="grid grid4" data-aos="fade-up">
           <gridCard :showButton="false">
@@ -88,7 +88,7 @@
           </gridCard>
         </div>
 
-        <!-- Grid 5 -->
+        <!-- Grid 5 - Services -->
 
         <nuxtLink to="/services" v class="grid grid5" data-aos="fade-up">
           <gridCard>
@@ -106,9 +106,9 @@
           </gridCard>
         </nuxtLink>
 
-        <!-- Grid 6 -->
+        <!-- Grid 6 - Profiles -->
 
-        <nuxtLink to="/profiles" v class="grid grid6" data-aos="fade-up">
+        <nuxtLink to="/contact" v class="grid grid6" data-aos="fade-up">
           <gridCard>
             <div class="wrapper">
               <div class="icons">
@@ -127,7 +127,7 @@
           </gridCard>
         </nuxtLink>
 
-        <!-- Grid 7 -->
+        <!-- Grid 7 - Stats -->
 
         <div v class="grid grid7" data-aos="fade-up">
           <gridCard :showButton="false">
@@ -144,7 +144,7 @@
           </gridCard>
         </div>
 
-        <!-- Grid 8 -->
+        <!-- Grid 8 - Contact -->
 
         <nuxtLink to="/contact" v class="grid grid8" data-aos="fade-up">
           <gridCard>
@@ -202,359 +202,361 @@ const skills = [
 <style lang="scss">
 @import "@/assets/styles/main.scss";
 
-/* Base text */
-
-.text {
-  text-align: start;
-  color: var(--primary-color);
-  p {
-    font-family: sub-header-font;
-    font-size: 12.5px;
-    opacity: 0.75;
-  }
-  h2 {
-    font-family: header-font;
-    font-size: 20px;
-  }
-}
-
-/* Grid 1 */
-
-.grid1 {
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  .image {
-    height: 100px;
-    width: 100px;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-  }
+.home {
+  /* Base text */
 
   .text {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    > div {
-      p {
-        font-family: sub-header-font;
-        font-size: 12.5px;
-        opacity: 0.75;
-      }
-      h2 {
-        font-family: header-font;
-      }
-    }
-    > p {
-      font-family: body-font;
+    text-align: start;
+    color: var(--primary-color);
+    p {
+      font-family: sub-header-font;
       font-size: 12.5px;
+      opacity: 0.75;
+    }
+    h2 {
+      font-family: header-font;
+      font-size: 20px;
     }
   }
-}
 
-@include respond(md) {
+  /* Grid 1 */
+
   .grid1 {
     .wrapper {
-      flex-direction: row;
-      gap: 50px;
-      .image {
-        height: 200px;
-        width: 175px;
-        img {
-          border-radius: 25px 0 25px 0;
-        }
-      }
-      .text {
-        width: 35%;
-        > div {
-          h2 {
-            margin-top: 1px;
-            font-size: 25px;
-          }
-        }
-        > p {
-          font-size: 15px;
-        }
-      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
-  }
-}
-
-/* Grid 2 - About */
-
-.grid2 {
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 10px 0;
-    .signature {
-      margin-top: 25px;
-      font-family: signature-font;
-      font-size: 75px;
-      color: var(--accent-color);
-    }
-  }
-}
-
-@include respond(md) {
-  .grid2 {
-    .wrapper {
-      .signature {
-        margin-top: 50px;
-      }
-    }
-  }
-}
-
-/* Grid 3 - Project*/
-
-.grid3 {
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px 0;
-    gap: 10px;
     .image {
-      width: 100%;
-      height: 150px;
+      height: 100px;
+      width: 100px;
       img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
+        border-radius: 50%;
       }
     }
-  }
-}
 
-@include respond(md) {
-  .grid3 {
-    .wrapper {
-      .image {
-        height: 200px;
-      }
-    }
-  }
-}
-
-/* Grid 4 - Skills highlight */
-
-.grid4 {
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    ::before {
-      background-color: transparent;
-    }
-    .slider {
-      width: 100%;
-      height: 100%;
+    .text {
+      text-align: center;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: transparent;
-      .mySwiper {
-        width: 100%;
-        height: 100%;
-        background-color: transparent;
+      gap: 10px;
+      > div {
+        p {
+          font-family: sub-header-font;
+          font-size: 12.5px;
+          opacity: 0.75;
+        }
+        h2 {
+          font-family: header-font;
+        }
+      }
+      > p {
+        font-family: body-font;
+        font-size: 12.5px;
+      }
+    }
+  }
 
-        .swiper-slide {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          .skill-icon {
-            width: 150px;
-            height: 150px;
-            object-fit: contain;
+  @include respond(md) {
+    .grid1 {
+      .wrapper {
+        flex-direction: row;
+        gap: 50px;
+        .image {
+          height: 200px;
+          width: 175px;
+          img {
+            border-radius: 25px 0 25px 0;
+          }
+        }
+        .text {
+          width: 35%;
+          > div {
+            h2 {
+              margin-top: 1px;
+              font-size: 25px;
+            }
+          }
+          > p {
+            font-size: 15px;
           }
         }
       }
     }
   }
-}
 
-@include respond(lg) {
+  /* Grid 2 - About */
+
+  .grid2 {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 0;
+      .signature {
+        margin-top: 25px;
+        font-family: signature-font;
+        font-size: 75px;
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  @include respond(md) {
+    .grid2 {
+      .wrapper {
+        .signature {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+
+  /* Grid 3 - Project*/
+
+  .grid3 {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px 0;
+      gap: 10px;
+      .image {
+        width: 100%;
+        height: 150px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  @include respond(md) {
+    .grid3 {
+      .wrapper {
+        .image {
+          height: 200px;
+        }
+      }
+    }
+  }
+
+  /* Grid 4 - Skills highlight */
+
   .grid4 {
     .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      ::before {
+        background-color: transparent;
+      }
       .slider {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
         .mySwiper {
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+
           .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             .skill-icon {
-              width: 100px;
-              height: 100px;
+              width: 150px;
+              height: 150px;
+              object-fit: contain;
             }
           }
         }
       }
     }
   }
-}
 
-/* Grid 5 - Services */
-
-.grid5 {
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px 0;
-    gap: 10px;
-    .icons {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 50px;
-      i {
-        font-size: 25px;
-        color: var(--primary-color);
-        opacity: 0.75;
-      }
-    }
-  }
-}
-
-/* Grid 6 - Profiles */
-
-.grid6 {
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px 0;
-    gap: 10px;
-    .icons {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 50px;
-      div {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        color: var(--primary-color);
-        box-shadow: 2px 2px 8px var(--shadow-color),
-          -2px -2px 8px var(--shadow-color);
-      }
-    }
-  }
-}
-
-/* Grid 7 - Stats */
-
-.grid7 {
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    padding: 10px 0;
-    div {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      border-radius: 25px 0 25px 0;
-      box-shadow: 2px 2px 8px var(--shadow-color),
-        -2px -2px 8px var(--shadow-color);
-      h2 {
-        font-family: header-font;
-      }
-      p {
-        font-family: sub-header-font;
-        opacity: 0.75;
-      }
-    }
-  }
-}
-
-@include respond(md) {
-  .grid7 {
-    .wrapper {
-      padding: 20px;
-    }
-  }
-}
-
-@include respond(lg) {
-  .grid7 {
-    .wrapper {
-      flex-direction: row;
-      padding: 20px;
-      gap: 35px;
-      div {
-        height: max-content;
-        width: max-content;
-        padding: 35px;
-      }
-    }
-  }
-}
-
-/* Grid 8 - Contact */
-
-.grid8 {
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px 0;
-    .icon {
-      position: relative;
-      font-size: 50px;
-      color: var(--primary-color);
-      opacity: 0.5;
-      i {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-    }
-    .text {
-      p {
-        font-size: 25px;
-        font-family: header-font;
-        opacity: 1;
-        font-weight: bold;
-        span {
-          color: var(--accent-color);
+  @include respond(lg) {
+    .grid4 {
+      .wrapper {
+        .slider {
+          .mySwiper {
+            .swiper-slide {
+              .skill-icon {
+                width: 100px;
+                height: 100px;
+              }
+            }
+          }
         }
       }
     }
   }
-}
 
-@include respond(md) {
+  /* Grid 5 - Services */
+
+  .grid5 {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px 0;
+      gap: 10px;
+      .icons {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        i {
+          font-size: 25px;
+          color: var(--primary-color);
+          opacity: 0.75;
+        }
+      }
+    }
+  }
+
+  /* Grid 6 - Profiles */
+
+  .grid6 {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px 0;
+      gap: 10px;
+      .icons {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        div {
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          color: var(--primary-color);
+          box-shadow: 2px 2px 8px var(--shadow-color),
+            -2px -2px 8px var(--shadow-color);
+        }
+      }
+    }
+  }
+
+  /* Grid 7 - Stats */
+
+  .grid7 {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      padding: 10px 0;
+      div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        border-radius: 25px 0 25px 0;
+        box-shadow: 2px 2px 8px var(--shadow-color),
+          -2px -2px 8px var(--shadow-color);
+        h2 {
+          font-family: header-font;
+        }
+        p {
+          font-family: sub-header-font;
+          opacity: 0.75;
+        }
+      }
+    }
+  }
+
+  @include respond(md) {
+    .grid7 {
+      .wrapper {
+        padding: 20px;
+      }
+    }
+  }
+
+  @include respond(lg) {
+    .grid7 {
+      .wrapper {
+        flex-direction: row;
+        padding: 20px;
+        gap: 35px;
+        div {
+          height: max-content;
+          width: max-content;
+          padding: 35px;
+        }
+      }
+    }
+  }
+
+  /* Grid 8 - Contact */
+
   .grid8 {
     .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px 0;
       .icon {
-        font-size: 60px;
+        position: relative;
+        font-size: 50px;
+        color: var(--primary-color);
+        opacity: 0.5;
+        i {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
       }
       .text {
         p {
-          font-size: 30px;
+          font-size: 25px;
+          font-family: header-font;
+          opacity: 1;
+          font-weight: bold;
+          span {
+            color: var(--accent-color);
+          }
+        }
+      }
+    }
+  }
+
+  @include respond(md) {
+    .grid8 {
+      .wrapper {
+        .icon {
+          font-size: 60px;
+        }
+        .text {
+          p {
+            font-size: 30px;
+          }
         }
       }
     }

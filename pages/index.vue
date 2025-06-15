@@ -46,7 +46,7 @@
           <gridCard>
             <div class="wrapper">
               <div class="image">
-                <img src="@/assets/images/project.svg" alt="" />
+                <img src="@/assets/images/project.svg">
               </div>
               <div class="text">
                 <p>What I've worked on</p>
@@ -94,9 +94,10 @@
           <gridCard>
             <div class="wrapper">
               <div class="icons">
+                <i class="bi bi-code-slash"></i>
                 <i class="bi bi-phone"></i>
-                <i class="bi bi-globe2"></i>
                 <i class="bi bi-laptop"></i>
+                <i class="bi bi-gear"></i>
               </div>
               <div class="text">
                 <p>What I can do</p>
@@ -177,23 +178,29 @@ import "swiper/css/effect-fade";
 import HTML5 from "@/assets/icons/html.png";
 import CSS3 from "@/assets/icons/css.png";
 import JavaScript from "@/assets/icons/javascript.png";
+import TypeScript from "@/assets/icons/typescript.png";
 import VueJS from "@/assets/icons/vue.png";
 import Nuxt from "@/assets/icons/nuxt.png";
 import TailwindCSS from "@/assets/icons/tailwind.png";
 import Bootstrap from "@/assets/icons/bootstrap.png";
 import SASS from "@/assets/icons/sass.png";
 import Firebase from "@/assets/icons/firebase.png";
+import Quasar from "@/assets/icons/quasar.png";
+import Pinia from "@/assets/icons/pinia.svg";
 
 const skills = [
   { id: 1, name: "HTML5", icon: HTML5 },
   { id: 2, name: "CSS3", icon: CSS3 },
   { id: 3, name: "JavaScript", icon: JavaScript },
-  { id: 4, name: "Vue.js", icon: VueJS },
-  { id: 5, name: "Nuxt.js", icon: Nuxt },
+  { id: 4, name: "TypeScript", icon: TypeScript },
+  { id: 5, name: "Bootstrap", icon: Bootstrap },
   { id: 6, name: "Tailwind CSS", icon: TailwindCSS },
-  { id: 7, name: "Bootstrap", icon: Bootstrap },
-  { id: 8, name: "SASS", icon: SASS },
-  { id: 9, name: "Firebase", icon: Firebase },
+  { id: 7, name: "SASS", icon: SASS },
+  { id: 8, name: "Vue.js", icon: VueJS },
+  { id: 9, name: "Nuxt.js", icon: Nuxt },
+  { id: 10, name: "Quasar", icon: Quasar },
+  { id: 11, name: "Pinia", icon: Pinia },
+  { id: 12, name: "Firebase", icon: Firebase }
 ];
 </script>
 
@@ -419,7 +426,7 @@ const skills = [
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 50px;
+        gap: 35px;
         i {
           font-size: 25px;
           color: var(--primary-color);

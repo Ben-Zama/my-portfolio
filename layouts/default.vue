@@ -1,13 +1,15 @@
 <template>
   <div class="layout">
 
-    <!-- Mobile Menu -->
-     
-    <mobileMenu :class="{ active: isMenuOpen }" @close="isMenuOpen = false" />
-
+    
     <!-- Header -->
-
+    
     <header>
+      
+      <!-- Mobile Menu -->
+       
+      <mobileMenu :class="{ active: isMenuOpen }" @close="isMenuOpen = false" />
+
       <div class="logo"><nuxt-link to="/">BENZAMA</nuxt-link></div>
 
       <nav>

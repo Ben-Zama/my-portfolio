@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="aboutPage">
     <!-- Page Title -->
 
     <div class="pageTitle" data-aos="fade-up">
@@ -12,7 +12,7 @@
 
     <div class="content">
       <div class="gridContainer">
-        <!-- Grid1 - Image -->
+        <!-- Grid 1 - Image -->
 
         <div class="grid grid1" data-aos="fade-up">
           <grid-card-2>
@@ -24,28 +24,62 @@
           </grid-card-2>
         </div>
 
-        <!-- Grid2 - About -->
+        <!-- Grid 2 - About -->
 
         <div class="grid grid2" data-aos="fade-up">
           <grid-card-2>
             <div class="wrapper">
               <h3>Benzama Musa</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni,
-                quas recusandae omnis sunt sit soluta cum nam vel placeat?
-                Explicabo perferendis dolore facilis soluta accusantium dicta
-                voluptatem nihil rerum facere. lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Magni, quas recusandae omnis sunt
-                sit soluta cum nam vel placeat? Explicabo perferendis dolore
-                facilis soluta accusantium dicta voluptatem nihil rerum facere.
-              </p>
+              <transition name="expand">
+                <p :class="{ clamped: !showFullBio }" @click="toggleBio">
+                  I’m a passionate Frontend Developer with two years of
+                  experience transforming design concepts into fast, responsive,
+                  and accessible web applications. I specialize in modern
+                  JavaScript (ES6+), TypeScript, and Vue.js, paired with CSS3,
+                  Sass, Tailwind, or Bootstrap to create pixel-perfect
+                  interfaces. My workflow emphasizes clean, maintainable code,
+                  performance optimization, and cross‑browser compatibility,
+                  ensuring every site feels native on desktop and mobile alike.
+                  I thrive on collaboration: working closely with designers,
+                  back‑end engineers, and product managers to bring visions to
+                  life—and I’m always eager to learn new technologies or improve
+                  existing processes. Whether architecting complex component
+                  libraries, integrating RESTful APIs, or fine‑tuning animations
+                  for a seamless user experience, I aim to deliver solutions
+                  that delight users and drive business results.
+                  <span class="readmore">
+                    {{ showFullBio ? " Show Less" : "… Read More" }}
+                  </span>
+                </p>
+              </transition>
             </div>
           </grid-card-2>
         </div>
 
-        <!-- Grid 3 - Work Experience -->
+        <!-- Grid 3 - Resume -->
 
-        <div class="grid grid3" data-aos="fade-up">
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          class="grid grid3"
+          data-aos="fade-up"
+        >
+          <grid-card>
+            <div class="wrapper">
+              <div class="image">
+                <img src="@/assets/images/resume.svg" alt="" />
+              </div>
+              <div class="text">
+                <p>View my Resume</p>
+                <h2>Resume</h2>
+              </div>
+            </div>
+          </grid-card>
+        </a>
+
+        <!-- Grid 4 - Work Experience -->
+
+        <div class="grid grid4" data-aos="fade-up">
           <grid-card-2>
             <div class="wrapper">
               <div class="header">
@@ -70,9 +104,9 @@
           </grid-card-2>
         </div>
 
-        <!-- Grid 4 - Education -->
+        <!-- Grid 5 - Education -->
 
-        <div class="grid grid4" data-aos="fade-up">
+        <div class="grid grid5" data-aos="fade-up">
           <grid-card-2>
             <div class="wrapper">
               <div class="header">
@@ -97,9 +131,9 @@
           </grid-card-2>
         </div>
 
-        <!-- Grid 5 - Stats -->
+        <!-- Grid 6 - Stats -->
 
-        <div class="grid grid5" data-aos="fade-up">
+        <div class="grid grid6" data-aos="fade-up">
           <grid-card-2>
             <div class="wrapper">
               <div>
@@ -114,9 +148,9 @@
           </grid-card-2>
         </div>
 
-        <!-- Grid 6 - Profiles -->
+        <!-- Grid 7 - Profiles -->
 
-        <div class="grid grid6" data-aos="fade-up">
+        <div class="grid grid7" data-aos="fade-up">
           <grid-card>
             <div class="wrapper">
               <div class="icons">
@@ -138,20 +172,41 @@
     </div>
 
     <infinite-slider data-aos="fade-up" />
-    
+
+    <get-in-touch data-aos="fade-up" />
   </div>
-  
-  
 </template>
 
 <script setup>
+import { ref } from "vue";
 
+const showFullBio = ref(false);
+
+function toggleBio() {
+  showFullBio.value = !showFullBio.value;
+}
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/styles/main.scss";
 
-.about {
+.aboutPage {
+  .wrapper {
+    .text {
+      text-align: start;
+      color: var(--primary-color);
+      p {
+        font-family: sub-header-font;
+        font-size: 12.5px;
+        opacity: 0.75;
+      }
+      h2 {
+        font-family: header-font;
+        font-size: 20px;
+      }
+    }
+  }
+
   /* Grid 1 - About */
 
   .grid1 {
@@ -177,12 +232,10 @@
     .grid1 {
       .wrapper {
         .image {
+          height: 100%;
           display: flex;
           justify-content: center;
-          img {
-            width: 35%;
-            border-radius: 50px 0 50px 0;
-          }
+          align-items: center;
         }
       }
     }
@@ -195,6 +248,45 @@
       display: flex;
       flex-direction: column;
       gap: 25px;
+      .clamped {
+        overflow: hidden;
+        display: -webkit-box;
+        line-clamp: 10;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+      }
+
+      @include respond(lg) {
+        .clamped {
+          display: block;
+        }
+        .readmore {
+          display: none;
+        }
+      }
+
+      /* the little “Read More” text */
+      .readmore {
+        color: var(--accent-color);
+        font-family: sub-header-font;
+        text-decoration: underline;
+        margin-left: 4px;
+        cursor: pointer;
+      }
+
+      /* transition on max-height → smooth expand/collapse */
+      .expand-enter-active,
+      .expand-leave-active {
+        transition: max-height 0.3s ease;
+      }
+      .expand-enter-from,
+      .expand-leave-to {
+        max-height: 4.5em; /* roughly 3 lines × 1.5em line-height */
+      }
+      .expand-enter-to,
+      .expand-leave-from {
+        max-height: 20em; /* big enough to show full text */
+      }
 
       h3 {
         font-family: header-font;
@@ -209,10 +301,31 @@
     }
   }
 
-  /* Grid 3 - Work Experience & Education */
+  /* Grid 3 - Resume */
 
-  .grid3,
-  .grid4 {
+  .grid3 {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px 0 !important;
+      gap: 25px;
+      .image {
+        width: 100%;
+        padding: 25px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  /* Grid 4 & 5 - Work Experience & Education */
+
+  .grid4,
+  .grid5 {
     .wrapper {
       .header {
         display: flex;
@@ -279,9 +392,9 @@
     }
   }
 
-  /* Grid 5 - Stats */
+  /* Grid 6 - Stats */
 
-  .grid5 {
+  .grid6 {
     .wrapper {
       display: flex;
       flex-direction: column;
@@ -290,7 +403,7 @@
       gap: 25px;
       padding: 10px 0;
       div {
-        width: 100%;
+        width: max-content;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -301,7 +414,7 @@
         border-radius: 25px 0 25px 0;
         box-shadow: 2px 2px 8px var(--shadow-color),
           -2px -2px 8px var(--shadow-color);
-        padding: 10px 0;
+        padding: 15px 30px;
         h2 {
           font-family: header-font;
         }
@@ -314,7 +427,7 @@
   }
 
   @include respond(md) {
-    .grid5 {
+    .grid6 {
       .wrapper {
         flex-direction: row;
 
@@ -326,9 +439,9 @@
     }
   }
 
-  /* Grid 6 - Profiles */
+  /* Grid 7 - Profiles */
 
-  .grid6 {
+  .grid7 {
     .wrapper {
       display: flex;
       flex-direction: column;
@@ -352,19 +465,6 @@
           box-shadow: 2px 2px 8px var(--shadow-color),
             -2px -2px 8px var(--shadow-color);
         }
-      }
-    }
-    .text {
-      text-align: start;
-      color: var(--primary-color);
-      p {
-        font-family: sub-header-font;
-        font-size: 12.5px;
-        opacity: 0.75;
-      }
-      h2 {
-        font-family: header-font;
-        font-size: 20px;
       }
     }
   }

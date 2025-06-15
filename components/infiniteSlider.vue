@@ -23,6 +23,7 @@ const sliderItems = [
   { id: 2, name: 'E-Commerce Landing Page' },
   { id: 4, name: 'Portfolios' },
   { id: 3, name: 'Web Apps' },
+  { id: 5, name: 'Mobile App Development' },
 ]
 
 const infiniteSliderItems = Array(20).fill(sliderItems).flat()

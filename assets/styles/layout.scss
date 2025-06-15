@@ -14,6 +14,7 @@
 }
 
 .layout {
+    position: relative;
 
     header {
         position: sticky;
@@ -34,7 +35,7 @@
             color: var(--accent-color)
         }
 
-        nav {
+        > nav {
             display: none;
             ul {
                 list-style: none;
@@ -111,7 +112,7 @@
         header {
             padding: 0 7.5%;
 
-            nav {
+             > nav {
                 display: block;
             }
 

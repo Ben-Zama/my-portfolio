@@ -77,29 +77,19 @@
         </div>
       </div>
 
-      <!-- Hire on freelance -->
-
-      <div class="gig">
-        <div class="pageTitle" data-aos="fade-up">
-          <i class="bi bi-claude"></i>
-          <h2>Hire on freelance</h2>
-          <i class="bi bi-claude"></i>
-        </div>
-        <div class="hire" data-aos="fade-up">
-          <a href="">
-            <img src="@/assets/icons/upwork.png" alt="" />
-            <p>Hire on Upwork</p>
-          </a>
-        </div>
-      </div>
     </div>
+
+    <infinite-slider data-aos="fade-up" />
 
     <get-in-touch data-aos="fade-up" />
   </div>
 </template>
 
 <script setup>
-// Add your form submit logic here (e.g., send to email service or API)
+useHead ({
+  title: 'Contact me',
+})
+
 </script>
 
 <style lang="scss">
@@ -109,6 +99,7 @@
   .content {
     padding: 0 5%;
     .box {
+      margin-bottom: 75px;
       display: flex;
       flex-direction: column;
       gap: 25px;
@@ -238,41 +229,7 @@
           }
         }
       }
-    }
-
-    /* Hire on freelance */
-
-    .gig {
-      margin: 50px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      .hire {
-        a {
-          display: flex;
-          align-items: center;
-          gap: 15px;
-          padding: 10px 20px;
-          background-color: var(--secondary-color);
-          color: var(--primary-color);
-          font-family: body-font;
-          border: 1px solid var(--primary-color);
-          border-radius: 20px;
-          transition: all .3s;
-
-          img {
-            width: 25px;
-            height: 25px;
-          }
-
-          &:hover {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            transform: scale(1.1);
-          }
-        }
-      }
-    }
+    }   
   }
 
   @include respond(md) {

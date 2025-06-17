@@ -178,6 +178,10 @@
 </template>
 
 <script setup>
+useHead ({
+  title: 'About me',
+})
+
 import { ref } from "vue";
 
 const showFullBio = ref(false);

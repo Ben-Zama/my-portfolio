@@ -168,6 +168,10 @@
 </template>
 
 <script setup>
+useHead ({
+  title: 'Home',
+})
+
 import gridCard from "@/components/gridCard.vue";
 
 import { Swiper, SwiperSlide } from "swiper/vue";

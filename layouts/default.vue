@@ -75,4 +75,5 @@ const socialLinks = [
 ];
 
 const isMenuOpen = ref(false);
+
 </script>

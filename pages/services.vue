@@ -105,6 +105,10 @@
 </template>
 
 <script setup>
+useHead ({
+  title: 'Services I offer',
+})
+
 import { ref } from "vue";
 
 import HTML5 from "@/assets/icons/html.png";

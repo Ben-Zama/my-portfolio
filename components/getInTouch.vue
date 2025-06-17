@@ -8,7 +8,7 @@
         <div class="text">
             <h2>Have a project or Idea in mind?</h2>
             <p>I would be more than pleased to bring it to life.</p>
-            <nuxt-link to="/contact"><button>Contact Me</button></nuxt-link>
+            <a href="mailto:benzamasimon@gmail.com" target="_blank"><button>Contact Me</button></a>
         </div>
 
     </div>

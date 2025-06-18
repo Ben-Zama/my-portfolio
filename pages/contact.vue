@@ -45,7 +45,7 @@
 
         <!-- Contact Form -->
         <div class="contactForm" data-aos="fade-up">
-          <form action="" data-aos="fade-up">
+          <form @submit.prevent data-aos="fade-up">
             <div class="pageTitle" data-aos="fade-up">
               <i class="bi bi-claude"></i>
               <h2>Send a mail</h2>
@@ -76,7 +76,6 @@
           </form>
         </div>
       </div>
-
     </div>
 
     <infinite-slider data-aos="fade-up" />
@@ -86,10 +85,9 @@
 </template>
 
 <script setup>
-useHead ({
-  title: 'Contact me',
-})
-
+useHead({
+  title: "Contact me",
+});
 </script>
 
 <style lang="scss">
@@ -229,7 +227,7 @@ useHead ({
           }
         }
       }
-    }   
+    }
   }
 
   @include respond(md) {

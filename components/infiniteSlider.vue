@@ -115,7 +115,7 @@ onBeforeUnmount(() => {
   }
 }
 
-@include respond(md) {
+@include respond-between(sm, lg) {
   .infiniteSlider {
     .innerSlider {
       .slide {

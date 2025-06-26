@@ -1,16 +1,16 @@
 // _mixins.scss
 
-@mixin respond($breakpoint, $type: 'min') {
-  $size: map-get($breakpoints, $breakpoint);
+@mixin respond-between($min, $max) {
+  // resolve map keys to actual sizes
+  $min-size: if(type-of($min) == 'string' and map-has-key($breakpoints, $min),
+                 map-get($breakpoints, $min),
+                 $min);
+  $max-size: if(type-of($max) == 'string' and map-has-key($breakpoints, $max),
+                 map-get($breakpoints, $max),
+                 $max);
 
-  @if $size == null {
-    @warn "Breakpoint `#{$breakpoint}` not found in $breakpoints map.";
-  } @else if index(('min', 'max'), $type) == null {
-    @warn "Second argument `#{$type}` must be 'min' or 'max'.";
-  } @else {
-    @media (#{unquote($type)}-width: #{$size}) {
-      @content;
-    }
+  @media (min-width: #{$min-size}) and (max-width: #{$max-size}) {
+    @content;
   }
 }
 

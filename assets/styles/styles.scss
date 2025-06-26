@@ -38,7 +38,7 @@
   }
 }
 
-@include respond(md) {
+@include respond-between(sm, lg) {
   .home {
     padding: 75px 7.5%;
     .gridContainer {
@@ -52,7 +52,7 @@
   }
 }
 
-@include respond(lg) {
+@include respond-between(lg, max) {
   .home {
     padding: 100px 5%;
     .gridContainer {
@@ -89,7 +89,7 @@
   }
 }
 
-@include respond(md) {
+@include respond-between(sm, lg) {
   .aboutPage {
     .content {
       padding: 0 7.5% 50px 7.5%;
@@ -112,7 +112,7 @@
   }
 }
 
-@include respond(lg) {
+@include respond-between(lg, max) {
   .aboutPage {
     .content {
       padding: 0 10% 75px 10%;

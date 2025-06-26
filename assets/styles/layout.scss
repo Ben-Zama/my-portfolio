@@ -105,7 +105,7 @@
   }
 }
 
-@include respond(md, max) {
+@include respond-between(sm, lg) {
   .layout {
     header {
       padding: 0 7.5%;
@@ -129,7 +129,7 @@
   }
 }
 
-@include respond(lg) {
+@include respond-between(lg, max) {
   .layout {
     header {
       padding: 0 5%;

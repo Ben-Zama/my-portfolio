@@ -68,7 +68,7 @@
     }
 }
 
-@include respond(md) {
+@include respond-between(sm, lg) {
     .git {
         flex-direction: row;
         justify-content: space-between;
@@ -81,7 +81,7 @@
     }
 }
 
-@include respond(lg) {
+@include respond-between(sm, lg) {
     .git {
         justify-content: center;
         .image {

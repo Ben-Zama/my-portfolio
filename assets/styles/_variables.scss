@@ -1,34 +1,32 @@
 // _variables.scss
 
 $breakpoints: (
-  xs: 0,
-  sm: 576px,
+  sm: 600px,
   md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
+  lg: 1024px,
+  max: 500px,
 );
 
 $light-colors: (
-  bg:        #FCFCFC,
-  text:      #171717,
-  primary:   #25282C,
-  secondary: #EDEDED,
+  bg: #fcfcfc,
+  text: #171717,
+  primary: #25282c,
+  secondary: #ededed,
   opaque-secondary: #ededed35,
-  accent:    #00AAB3,
-  reverse-accent: #4DF6FF,
-  shadow:    #d1cdcd,
-  opaque-border: #25282c3f
+  accent: #00aab3,
+  reverse-accent: #4df6ff,
+  shadow: #d1cdcd,
+  opaque-border: #25282c3f,
 );
 
 $dark-colors: (
-  bg:        #171717,
-  text:      #FCFCFC,
-  primary:   #EDEDED,
-  secondary: #25282C,
+  bg: #171717,
+  text: #fcfcfc,
+  primary: #ededed,
+  secondary: #25282c,
   opaque-secondary: #25282cc5,
-  accent:    #4DF6FF,
-  reverse-accent: #00AAB3,
-  shadow:    #070808,
-  opaque-border: #ededed3a
+  accent: #4df6ff,
+  reverse-accent: #00aab3,
+  shadow: #070808,
+  opaque-border: #ededed3a,
 );

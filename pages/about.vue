@@ -232,7 +232,7 @@ function toggleBio() {
     }
   }
 
-  @include respond(lg) {
+  @include respond-between(sm, lg) {
     .grid1 {
       .wrapper {
         .image {
@@ -260,7 +260,7 @@ function toggleBio() {
         -webkit-box-orient: vertical;
       }
 
-      @include respond(lg) {
+      @include respond-between(lg, max) {
         .clamped {
           display: block;
         }
@@ -430,7 +430,7 @@ function toggleBio() {
     }
   }
 
-  @include respond(md) {
+  @include respond-between(sm, lg) {
     .grid6 {
       .wrapper {
         flex-direction: row;

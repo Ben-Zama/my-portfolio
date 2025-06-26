@@ -406,7 +406,7 @@ const toggle = (index) => {
   }
 }
 
-@include respond(md) {
+@include respond-between(sm, lg) {
   .servicesPage {
     .content {
       padding: 0 7.5%;
@@ -456,7 +456,7 @@ const toggle = (index) => {
   }
 }
 
-@include respond(lg) {
+@include respond-between(lg, max) {
   .servicesPage {
     .content {
       padding: 0 15%;

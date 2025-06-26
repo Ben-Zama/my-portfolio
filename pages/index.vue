@@ -169,7 +169,7 @@
 
 <script setup>
 useHead ({
-  title: 'Home',
+  title: 'Benzama Musa | Frontend Web Developer',
 })
 
 import gridCard from "@/components/gridCard.vue";

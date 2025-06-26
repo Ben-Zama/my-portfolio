@@ -195,7 +195,7 @@ const portfolio = [
     }
   }
 
-  @include respond-between('sm', 'lg') {
+  @include respond-between('lg', 'max') {
     .content {
       padding: 0 10%;
       .portfolio {

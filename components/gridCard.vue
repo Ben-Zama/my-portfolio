@@ -30,7 +30,7 @@ const props = defineProps({
     width: 100%;
     height: 100%;
     display: flex;
-    background: var(--secondary-color);
+    background: var(--opaque-secondary-color);
     border-radius: 15px;
     box-shadow: 2px 2px 8px var(--shadow-color), -2px -2px 8px var(--shadow-color);
     padding: 10px;

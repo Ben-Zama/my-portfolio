@@ -1,13 +1,16 @@
 // _mixins.scss
 
-@mixin respond($breakpoint) {
+@mixin respond($breakpoint, $type: 'min') {
   $size: map-get($breakpoints, $breakpoint);
-  @if $size != null {
-    @media (min-width: $size) {
+
+  @if $size == null {
+    @warn "Breakpoint `#{$breakpoint}` not found in $breakpoints map.";
+  } @else if index(('min', 'max'), $type) == null {
+    @warn "Second argument `#{$type}` must be 'min' or 'max'.";
+  } @else {
+    @media (#{unquote($type)}-width: #{$size}) {
       @content;
     }
-  } @else {
-    @warn "Breakpoint #{$breakpoint} not found in \$breakpoints map.";
   }
 }
 

@@ -275,7 +275,7 @@ const skills = [
     }
   }
 
-  @include respond-between(sm, lg) {
+  @include respond-between('sm', 'lg') {
     .grid1 {
       .wrapper {
         flex-direction: row;
@@ -321,7 +321,7 @@ const skills = [
     }
   }
 
-  @include respond-between(sm, lg) {
+  @include respond-between('sm', 'lg') {
     .grid2 {
       .wrapper {
         .signature {
@@ -352,7 +352,7 @@ const skills = [
     }
   }
 
-  @include respond-between(sm, lg) {
+  @include respond-between('sm', 'lg') {
     .grid3 {
       .wrapper {
         .image {
@@ -399,7 +399,7 @@ const skills = [
     }
   }
 
-  @include respond-between(lg, max) {
+  @include respond-between('lg', 'max') {
     .grid4 {
       .wrapper {
         .slider {
@@ -502,7 +502,7 @@ const skills = [
     }
   }
 
-  @include respond-between(sm, lg) {
+  @include respond-between('sm', 'lg') {
     .grid7 {
       .wrapper {
         padding: 20px;
@@ -510,7 +510,7 @@ const skills = [
     }
   }
 
-  @include respond-between(lg, max){
+  @include respond-between('lg', 'max'){
     .grid7 {
       .wrapper {
         flex-direction: row;
@@ -558,7 +558,7 @@ const skills = [
     }
   }
 
-  @include respond-between(sm, lg) {
+  @include respond-between('sm', 'lg') {
     .grid8 {
       .wrapper {
         .icon {

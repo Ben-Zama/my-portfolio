@@ -81,7 +81,7 @@
     }
 }
 
-@include respond-between(sm, lg) {
+@include respond-between('sm', 'lg') {
     .git {
         justify-content: center;
         .image {

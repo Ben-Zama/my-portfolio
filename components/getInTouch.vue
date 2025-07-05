@@ -68,7 +68,7 @@
     }
 }
 
-@include respond-between(sm, lg) {
+@include respond-between(sm, highest) {
     .git {
         flex-direction: row;
         justify-content: space-between;
@@ -81,7 +81,7 @@
     }
 }
 
-@include respond-between('sm', 'lg') {
+@include respond-between(lg, highest) {
     .git {
         justify-content: center;
         .image {

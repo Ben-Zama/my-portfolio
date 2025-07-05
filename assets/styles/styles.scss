@@ -38,7 +38,7 @@
   }
 }
 
-@include respond-between('sm', 'lg') {
+@include respond-between(sm, highest) {
   .home {
     padding: 75px 7.5%;
     .gridContainer {
@@ -52,13 +52,13 @@
   }
 }
 
-@include respond-between('lg', 'max') {
+@include respond-between(lg, highest) {
   .home {
     padding: 100px 5%;
     .gridContainer {
       grid-template-columns: repeat(4, 1fr);
       .grid1,
-      .grid4,
+      .grid5,
       .grid7,
       .grid8 {
         grid-column: span 2;
@@ -89,7 +89,7 @@
   }
 }
 
-@include respond-between('sm', 'lg') {
+@include respond-between(sm, highest) {
   .aboutPage {
     .content {
       padding: 0 7.5% 50px 7.5%;
@@ -112,7 +112,7 @@
   }
 }
 
-@include respond-between('lg', 'max') {
+@include respond-between(lg, highest) {
   .aboutPage {
     .content {
       padding: 0 10% 75px 10%;

@@ -56,9 +56,28 @@
           </gridCard>
         </nuxtLink>
 
-        <!-- Grid 4 - Skills -->
+        <!-- Grid 4 - Services -->
 
-        <div v class="grid grid4" data-aos="fade-up">
+        <nuxtLink to="/services" v class="grid grid4" data-aos="fade-up">
+          <gridCard>
+            <div class="wrapper">
+              <div class="icons">
+                <i class="bi bi-code-slash"></i>
+                <i class="bi bi-phone"></i>
+                <i class="bi bi-laptop"></i>
+                <i class="bi bi-gear"></i>
+              </div>
+              <div class="text">
+                <p>What I can do</p>
+                <h2>Services</h2>
+              </div>
+            </div>
+          </gridCard>
+        </nuxtLink>
+
+        <!-- Grid 5 - Skills -->
+
+        <div v class="grid grid5" data-aos="fade-up">
           <gridCard :showButton="false">
             <div class="wrapper">
               <div class="slider">
@@ -88,25 +107,6 @@
           </gridCard>
         </div>
 
-        <!-- Grid 5 - Services -->
-
-        <nuxtLink to="/services" v class="grid grid5" data-aos="fade-up">
-          <gridCard>
-            <div class="wrapper">
-              <div class="icons">
-                <i class="bi bi-code-slash"></i>
-                <i class="bi bi-phone"></i>
-                <i class="bi bi-laptop"></i>
-                <i class="bi bi-gear"></i>
-              </div>
-              <div class="text">
-                <p>What I can do</p>
-                <h2>Services</h2>
-              </div>
-            </div>
-          </gridCard>
-        </nuxtLink>
-
         <!-- Grid 6 - Profiles -->
 
         <nuxtLink to="/contact" v class="grid grid6" data-aos="fade-up">
@@ -127,6 +127,7 @@
             </div>
           </gridCard>
         </nuxtLink>
+        
 
         <!-- Grid 7 - Stats -->
 
@@ -275,7 +276,7 @@ const skills = [
     }
   }
 
-  @include respond-between('sm', 'lg') {
+  @include respond-between(sm, highest) {
     .grid1 {
       .wrapper {
         flex-direction: row;
@@ -321,7 +322,7 @@ const skills = [
     }
   }
 
-  @include respond-between('sm', 'lg') {
+  @include respond-between(sm, highest) {
     .grid2 {
       .wrapper {
         .signature {
@@ -352,7 +353,7 @@ const skills = [
     }
   }
 
-  @include respond-between('sm', 'lg') {
+  @include respond-between(sm, highest) {
     .grid3 {
       .wrapper {
         .image {
@@ -362,9 +363,33 @@ const skills = [
     }
   }
 
-  /* Grid 4 - Skills highlight */
+  /* Grid 4 - Services */
 
   .grid4 {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px 0;
+      gap: 10px;
+      .icons {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+        i {
+          font-size: 25px;
+          color: var(--primary-color);
+          opacity: 0.75;
+        }
+      }
+    }
+  }
+
+  /* Grid 5 - Skills highlight */
+
+  .grid5 {
     .wrapper {
       display: flex;
       justify-content: center;
@@ -399,8 +424,8 @@ const skills = [
     }
   }
 
-  @include respond-between('lg', 'max') {
-    .grid4 {
+  @include respond-between(lg, highest) {
+    .grid5 {
       .wrapper {
         .slider {
           .mySwiper {
@@ -411,30 +436,6 @@ const skills = [
               }
             }
           }
-        }
-      }
-    }
-  }
-
-  /* Grid 5 - Services */
-
-  .grid5 {
-    .wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 10px 0;
-      gap: 10px;
-      .icons {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 35px;
-        i {
-          font-size: 25px;
-          color: var(--primary-color);
-          opacity: 0.75;
         }
       }
     }
@@ -502,7 +503,7 @@ const skills = [
     }
   }
 
-  @include respond-between('sm', 'lg') {
+  @include respond-between(sm, lg) {
     .grid7 {
       .wrapper {
         padding: 20px;
@@ -510,7 +511,7 @@ const skills = [
     }
   }
 
-  @include respond-between('lg', 'max'){
+  @include respond-between(lg, highest){
     .grid7 {
       .wrapper {
         flex-direction: row;
@@ -558,7 +559,7 @@ const skills = [
     }
   }
 
-  @include respond-between('sm', 'lg') {
+  @include respond-between(sm, highest) {
     .grid8 {
       .wrapper {
         .icon {

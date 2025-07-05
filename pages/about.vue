@@ -232,7 +232,7 @@ function toggleBio() {
     }
   }
 
-  @include respond-between('sm', 'lg') {
+  @include respond-between(sm, highest) {
     .grid1 {
       .wrapper {
         .image {
@@ -260,7 +260,7 @@ function toggleBio() {
         -webkit-box-orient: vertical;
       }
 
-      @include respond-between ('lg', 'max') {
+      @include respond-between (lg, highest) {
         .clamped {
           display: block;
         }
@@ -430,7 +430,7 @@ function toggleBio() {
     }
   }
 
-  @include respond-between('sm', 'lg') {
+  @include respond-between(sm, highest) {
     .grid6 {
       .wrapper {
         flex-direction: row;

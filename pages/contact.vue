@@ -230,7 +230,7 @@ useHead({
     }
   }
 
-  @include respond-between('sm', 'lg') {
+  @include respond-between(sm, highest) {
     .content {
       padding: 0 7.5%;
       .box {
@@ -240,7 +240,7 @@ useHead({
     }
   }
 
-  @include respond-between('lg', 'max') {
+  @include respond-between(lg, highest) {
     .content {
       padding: 0 10%;
       .box {

@@ -17,6 +17,7 @@ $light-colors: (
   reverse-accent: #4df6ff,
   shadow: #d1cdcd,
   opaque-border: #25282c3f,
+  bg-line: #ededed55,
 );
 
 $dark-colors: (
@@ -24,9 +25,10 @@ $dark-colors: (
   text: #fcfcfc,
   primary: #ededed,
   secondary: #25282c,
-  opaque-secondary: #25282cc5,
+  opaque-secondary: #282828c5,
   accent: #4df6ff,
   reverse-accent: #00aab3,
   shadow: #070808,
   opaque-border: #ededed3a,
+  bg-line: #25282c45,
 );

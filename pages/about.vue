@@ -260,7 +260,7 @@ function toggleBio() {
         -webkit-box-orient: vertical;
       }
 
-      @include respond-between (lg, highest) {
+      @include respond-between (sm, lg) {
         .clamped {
           display: block;
         }

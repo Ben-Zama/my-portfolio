@@ -236,7 +236,7 @@ const toggle = (index) => {
         flex-direction: column;
         gap: 25px;
         padding: 20px;
-        background-color: var(--secondary-color);
+        background-color: var(--opaque-secondary-color);
         box-shadow: 2px 2px 8px var(--shadow-color),
           -2px -2px 8px var(--shadow-color);
         text-align: center;
@@ -427,6 +427,9 @@ const toggle = (index) => {
         .container {
           .processContainer {
             grid-template-columns: repeat(2, 1fr);
+            .step {
+              padding: 0 10px;
+            }
           }
         }
       }
@@ -436,7 +439,7 @@ const toggle = (index) => {
 
     .skills {
       .container {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         .image {
           padding: 20px;
         }
@@ -474,6 +477,9 @@ const toggle = (index) => {
         .container {
           .processContainer {
             grid-template-columns: repeat(4, 1fr);
+            .step {
+              padding: 0;
+            }
           }
         }
       }
@@ -484,6 +490,7 @@ const toggle = (index) => {
     .skills {
       padding: 0 10% 25px 10%;
       .container {
+        grid-template-columns: repeat(6, 1fr);
         .image {
           padding: 25px;
           width: 75%;
